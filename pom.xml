@@ -4,17 +4,26 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.example</groupId>
+  <groupId>com.github.luiguip</groupId>
   <artifactId>ibge-adapter</artifactId>
-  <version>1.0-SNAPSHOT</version>
-
+  <packaging>pom</packaging>
+  <version>0.0.1-SNAPSHOT</version>
   <name>ibge-adapter</name>
-  <url>http://www.example.com</url>
+
+  <modules>
+    <module>domain</module>
+    <module>application</module>
+    <module>infrastructure</module>
+    <module>ibge-adapter-launcher</module>
+  </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
+    <project.groupId>com.github.luiguip</project.groupId>
+    <wiremock.version>2.26.3</wiremock.version>
+    <org.mapstruct.version>1.5.2.Final</org.mapstruct.version>
   </properties>
 
   <parent>
@@ -24,4 +33,21 @@
     <relativePath/>
   </parent>
 
+  <dependencies>
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct</artifactId>
+      <version>${org.mapstruct.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.mapstruct</groupId>
+      <artifactId>mapstruct-processor</artifactId>
+      <version>${org.mapstruct.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
 </project>
