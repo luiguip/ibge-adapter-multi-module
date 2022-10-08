@@ -1,4 +1,4 @@
-package com.github.luiguip.client;
+package com.github.luiguip.infrastructure.client;
 
 public class IbgeEndpoints {
 

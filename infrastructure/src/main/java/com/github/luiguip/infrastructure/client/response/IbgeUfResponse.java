@@ -1,4 +1,4 @@
-package com.github.luiguip.client;
+package com.github.luiguip.infrastructure.client.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

@@ -1,5 +1,6 @@
-package com.github.luiguip.client;
+package com.github.luiguip.infrastructure.mapper;
 
+import com.github.luiguip.infrastructure.client.response.IbgeUfResponse;
 import com.github.luiguip.model.IbgeUf;
 import org.mapstruct.Mapper;
 

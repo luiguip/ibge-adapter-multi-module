@@ -1,7 +1,7 @@
-package com.github.luiguip.client.adapter;
+package com.github.luiguip.infrastructure.adapter;
 
-import com.github.luiguip.client.IbgeUfMapper;
-import com.github.luiguip.client.IbgeUfsClient;
+import com.github.luiguip.infrastructure.mapper.IbgeUfMapper;
+import com.github.luiguip.infrastructure.client.IbgeUfsClient;
 import com.github.luiguip.model.IbgeUf;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
