@@ -4,13 +4,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
-import java.util.Optional;
+import java.util.Collections;
+import java.util.List;
 
 @Slf4j
 @Component
 public class IbgeUfsClient {
 
-    public Optional<IbgeUfResponse[]> getAll() {
+    public List<IbgeUfResponse> getAll() {
         log.info("Retrieving all Ufs from Ibge.");
         var uri = String.format("%s%s", IbgeEndpoints.UFS_ENDPOINT, "?orderBy=nome");
         try {
@@ -18,11 +19,14 @@ public class IbgeUfsClient {
                     .get()
                     .uri(uri)
                     .retrieve()
-                    .bodyToMono(IbgeUfResponse[].class)
-                    .block();
-            return Optional.ofNullable(response);
+                    .bodyToFlux(IbgeUfResponse.class)
+                    .toStream()
+                    .toList();
+            log.info("Retrieved from ibge all {} ufs!", response.size());
+            return response;
         } catch (Exception e) {
-            return Optional.empty();
+            log.error("Error retrieving ufs!", e);
+            return Collections.emptyList();
         }
     }
 }

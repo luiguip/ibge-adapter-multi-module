@@ -43,7 +43,7 @@ class IbgeUfsClientTest {
         var actual = ibgeUfsClient.getAll();
 
         //then
-        assertThat(actual.orElseThrow())
+        assertThat(actual)
                 .hasSize(27)
                 .allMatch(uf -> Objects.nonNull(uf.id())
                         && Objects.nonNull(uf.name())
