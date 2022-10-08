@@ -1,4 +1,8 @@
 package com.github.luiguip.client;
 
-public record IbgeUfResponse(Integer id, String nome, String sigla) {
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public record IbgeUfResponse(Integer id,
+                             @JsonProperty("nome") String name,
+                             @JsonProperty("sigla") String abbreviation) {
 }
