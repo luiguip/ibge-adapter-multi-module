@@ -42,7 +42,7 @@ class IbgeUfsClientTest {
                         .withBodyFile("ufs.json")));
 
         //when
-        var actual = ibgeUfsClient.getAll();
+        var actual = ibgeUfsClient.findAll();
 
         //then
         assertThat(actual)

@@ -12,7 +12,7 @@ import java.util.List;
 @Component
 public class IbgeUfsClient {
 
-    public List<IbgeUfResponse> getAll() {
+    public List<IbgeUfResponse> findAll() {
         log.info("Retrieving all Ufs from Ibge.");
         var uri = String.format("%s%s", IbgeEndpoints.UFS_ENDPOINT, "?orderBy=nome");
         try {
