@@ -1,7 +1,7 @@
 package com.github.luiguip.infrastructure.mapper;
 
 import com.github.luiguip.infrastructure.client.response.IbgeUfResponse;
-import com.github.luiguip.model.IbgeUf;
+import com.github.luiguip.domain.IbgeUf;
 import org.mapstruct.Mapper;
 
 import java.util.List;
