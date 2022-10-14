@@ -12,5 +12,6 @@
     <artifactId>domain</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>domain</name>
+    <packaging>jar</packaging>
 
 </project>

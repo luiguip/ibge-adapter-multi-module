@@ -12,6 +12,7 @@
     <artifactId>infrastructure</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>infrastructure</name>
+    <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
