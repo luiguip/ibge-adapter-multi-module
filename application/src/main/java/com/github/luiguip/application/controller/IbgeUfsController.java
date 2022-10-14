@@ -1,5 +1,6 @@
 package com.github.luiguip.application.controller;
 
+import com.github.luiguip.application.dto.IbgeUfDto;
 import com.github.luiguip.application.mapper.IbgeUfDtoMapper;
 import com.github.luiguip.domain.port.application.IbgeUfsServicePort;
 import lombok.RequiredArgsConstructor;

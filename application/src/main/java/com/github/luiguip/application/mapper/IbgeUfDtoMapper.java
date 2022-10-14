@@ -1,6 +1,6 @@
 package com.github.luiguip.application.mapper;
 
-import com.github.luiguip.application.controller.IbgeUfDto;
+import com.github.luiguip.application.dto.IbgeUfDto;
 import com.github.luiguip.domain.model.IbgeUf;
 import org.mapstruct.Mapper;
 
