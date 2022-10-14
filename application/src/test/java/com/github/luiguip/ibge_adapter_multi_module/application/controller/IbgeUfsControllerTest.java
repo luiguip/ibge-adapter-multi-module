@@ -27,7 +27,7 @@ class IbgeUfsControllerTest {
     private IbgeUfDtoMapper mapper;
 
     @Test
-    void shouldReturnEmptyListWhenDoesntHaveValidUfs() {
+    void shouldReturnEmptyListWhenDoNotHaveValidUfs() {
         //when
         doReturn(Collections.emptyList())
                 .when(service)
