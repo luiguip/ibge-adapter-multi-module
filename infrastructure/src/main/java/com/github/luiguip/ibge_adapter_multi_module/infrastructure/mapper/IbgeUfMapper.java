@@ -1,6 +1,6 @@
-package com.github.luiguip.infrastructure.mapper;
+package com.github.luiguip.ibge_adapter_multi_module.infrastructure.mapper;
 
-import com.github.luiguip.infrastructure.client.response.IbgeUfResponse;
+import com.github.luiguip.ibge_adapter_multi_module.infrastructure.client.response.IbgeUfResponse;
 import com.github.luiguip.ibge_adapter_multi_module.domain.model.IbgeUf;
 import org.mapstruct.Mapper;
 

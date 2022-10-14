@@ -1,7 +1,7 @@
-package com.github.luiguip.infrastructure;
+package com.github.luiguip.ibge_adapter_multi_module.infrastructure;
 
-import com.github.luiguip.infrastructure.client.IbgeEndpoints;
-import com.github.luiguip.infrastructure.client.IbgeUfsClient;
+import com.github.luiguip.ibge_adapter_multi_module.infrastructure.client.IbgeUfsClient;
+import com.github.luiguip.ibge_adapter_multi_module.infrastructure.client.IbgeEndpoints;
 import com.github.tomakehurst.wiremock.WireMockServer;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;

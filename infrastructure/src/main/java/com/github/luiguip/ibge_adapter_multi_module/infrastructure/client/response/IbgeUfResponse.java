@@ -1,4 +1,4 @@
-package com.github.luiguip.infrastructure.client.response;
+package com.github.luiguip.ibge_adapter_multi_module.infrastructure.client.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

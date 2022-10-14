@@ -1,7 +1,7 @@
-package com.github.luiguip.infrastructure.adapter;
+package com.github.luiguip.ibge_adapter_multi_module.infrastructure.adapter;
 
-import com.github.luiguip.infrastructure.mapper.IbgeUfMapper;
-import com.github.luiguip.infrastructure.client.IbgeUfsClient;
+import com.github.luiguip.ibge_adapter_multi_module.infrastructure.mapper.IbgeUfMapper;
+import com.github.luiguip.ibge_adapter_multi_module.infrastructure.client.IbgeUfsClient;
 import com.github.luiguip.ibge_adapter_multi_module.domain.model.IbgeUf;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;

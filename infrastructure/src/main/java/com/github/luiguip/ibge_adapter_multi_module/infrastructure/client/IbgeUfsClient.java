@@ -1,6 +1,6 @@
-package com.github.luiguip.infrastructure.client;
+package com.github.luiguip.ibge_adapter_multi_module.infrastructure.client;
 
-import com.github.luiguip.infrastructure.client.response.IbgeUfResponse;
+import com.github.luiguip.ibge_adapter_multi_module.infrastructure.client.response.IbgeUfResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;

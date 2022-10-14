@@ -1,4 +1,4 @@
-package com.github.luiguip.infrastructure.client;
+package com.github.luiguip.ibge_adapter_multi_module.infrastructure.client;
 
 import lombok.NoArgsConstructor;
 

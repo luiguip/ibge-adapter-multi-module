@@ -3,9 +3,9 @@ package com.github.luiguip.ibge_adapter_launcher.configuration;
 import com.github.luiguip.ibge_adapter_multi_module.domain.port.application.IbgeUfsServicePort;
 import com.github.luiguip.ibge_adapter_multi_module.domain.port.infrastructure.IbgeUfsInfraPort;
 import com.github.luiguip.ibge_adapter_multi_module.domain.service.IbgeUfsService;
-import com.github.luiguip.infrastructure.adapter.IbgeUfsAdapter;
-import com.github.luiguip.infrastructure.client.IbgeUfsClient;
-import com.github.luiguip.infrastructure.mapper.IbgeUfMapperImpl;
+import com.github.luiguip.ibge_adapter_multi_module.infrastructure.adapter.IbgeUfsAdapter;
+import com.github.luiguip.ibge_adapter_multi_module.infrastructure.client.IbgeUfsClient;
+import com.github.luiguip.ibge_adapter_multi_module.infrastructure.mapper.IbgeUfMapperImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
