@@ -1,6 +1,6 @@
 package com.github.luiguip.infrastructure.adapter;
 
-import com.github.luiguip.domain.port.infrastructure.IbgesUfsInfraPort;
+import com.github.luiguip.domain.port.infrastructure.IbgeUfsInfraPort;
 import com.github.luiguip.infrastructure.mapper.IbgeUfMapper;
 import com.github.luiguip.infrastructure.client.IbgeUfsClient;
 import com.github.luiguip.domain.model.IbgeUf;
@@ -11,7 +11,7 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class IbgeUfsAdapter implements IbgesUfsInfraPort {
+public class IbgeUfsAdapter implements IbgeUfsInfraPort {
 
     private final IbgeUfMapper mapper;
     private final IbgeUfsClient client;
