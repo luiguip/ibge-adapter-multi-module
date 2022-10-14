@@ -2,7 +2,7 @@ package com.github.luiguip.ibge_adapter_multi_module.application.controller;
 
 import com.github.luiguip.ibge_adapter_multi_module.application.dto.IbgeUfDto;
 import com.github.luiguip.ibge_adapter_multi_module.application.mapper.IbgeUfDtoMapper;
-import com.github.luiguip.domain.port.application.IbgeUfsServicePort;
+import com.github.luiguip.ibge_adapter_multi_module.domain.port.application.IbgeUfsServicePort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
