@@ -1,8 +1,7 @@
-package com.github.luiguip.application.controller;
+package com.github.luiguip.ibge_adapter_multi_module.application.controller;
 
-import com.github.luiguip.application.mapper.IbgeUfDtoMapper;
+import com.github.luiguip.ibge_adapter_multi_module.application.mapper.IbgeUfDtoMapper;
 import com.github.luiguip.domain.port.application.IbgeUfsServicePort;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

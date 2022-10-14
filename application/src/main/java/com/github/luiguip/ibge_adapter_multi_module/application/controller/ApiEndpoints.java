@@ -1,4 +1,4 @@
-package com.github.luiguip.application.controller;
+package com.github.luiguip.ibge_adapter_multi_module.application.controller;
 
 import lombok.NoArgsConstructor;
 
