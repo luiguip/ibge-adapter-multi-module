@@ -4,6 +4,6 @@ import com.github.luiguip.domain.model.IbgeUf;
 
 import java.util.List;
 
-public interface IbgesUfsInfraPort {
+public interface IbgeUfsInfraPort {
     List<IbgeUf> findAll();
 }
