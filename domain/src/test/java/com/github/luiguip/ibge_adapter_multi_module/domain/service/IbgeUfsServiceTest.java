@@ -1,6 +1,6 @@
 package com.github.luiguip.ibge_adapter_multi_module.domain.service;
 
-import com.github.luiguip.ibge_adapter_multi_module.domain.port.infrastructure.IbgeUfsInfraPort;
+import com.github.luiguip.ibge_adapter_multi_module.domain.port.infrastructure.IbgeUfsPersistencePort;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -19,7 +19,7 @@ class IbgeUfsServiceTest {
     private IbgeUfsService service;
 
     @Mock
-    private IbgeUfsInfraPort infra;
+    private IbgeUfsPersistencePort infra;
 
     @Test
     void shouldFindEmptyListWhenDoNotHaveValidUfs() {

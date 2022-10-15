@@ -1,7 +1,7 @@
 package com.github.luiguip.ibge_adapter_launcher.configuration;
 
 import com.github.luiguip.ibge_adapter_multi_module.domain.port.application.IbgeUfsServicePort;
-import com.github.luiguip.ibge_adapter_multi_module.domain.port.infrastructure.IbgeUfsInfraPort;
+import com.github.luiguip.ibge_adapter_multi_module.domain.port.infrastructure.IbgeUfsPersistencePort;
 import com.github.luiguip.ibge_adapter_multi_module.domain.service.IbgeUfsService;
 import com.github.luiguip.ibge_adapter_multi_module.infrastructure.adapter.IbgeUfsAdapter;
 import com.github.luiguip.ibge_adapter_multi_module.infrastructure.client.IbgeUfsClient;
@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 public class IbgeUfsConfiguration {
 
     @Bean
-    public IbgeUfsInfraPort ibgesUfsInfraConfiguration() {
+    public IbgeUfsPersistencePort ibgesUfsInfraConfiguration() {
         return new IbgeUfsAdapter(new IbgeUfMapperImpl(), new IbgeUfsClient());
     }
 

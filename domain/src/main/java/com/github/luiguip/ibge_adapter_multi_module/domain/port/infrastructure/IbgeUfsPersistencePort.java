@@ -4,6 +4,6 @@ import com.github.luiguip.ibge_adapter_multi_module.domain.model.IbgeUf;
 
 import java.util.List;
 
-public interface IbgeUfsInfraPort {
+public interface IbgeUfsPersistencePort {
     List<IbgeUf> findAll();
 }
