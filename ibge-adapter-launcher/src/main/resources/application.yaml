@@ -1,3 +1,2 @@
-spring:
-  main:
-    web-application-type: servlet
+ibge:
+  url: "127.0.0.1:8080"
