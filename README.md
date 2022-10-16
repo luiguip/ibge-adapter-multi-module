@@ -20,6 +20,7 @@ It's separated in modules, where each module has a specific job:
 * Launcher: Contains configurations and the application launcher.
 
 ## Technologies
+- Maven
 - Java 17 
 - Spring Boot 
   - Spring web
