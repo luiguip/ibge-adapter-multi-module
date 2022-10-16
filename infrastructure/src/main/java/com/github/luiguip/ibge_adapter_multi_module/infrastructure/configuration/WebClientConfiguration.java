@@ -2,8 +2,10 @@ package com.github.luiguip.ibge_adapter_multi_module.infrastructure.configuratio
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;
 
+@Configuration
 public class WebClientConfiguration {
 
     @Value("${ibge.url}")
