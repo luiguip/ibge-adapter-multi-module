@@ -16,10 +16,10 @@ import java.util.Collections;
 import java.util.List;
 
 @ExtendWith(MockitoExtension.class)
-class IbgeUfsAdapterTest {
+class IbgeUfsPersistenceAdapterTest {
 
     @InjectMocks
-    private IbgeUfsAdapter adapter;
+    private IbgeUfsPersistenceAdapter adapter;
 
     @Mock
     private IbgeUfsClient client;

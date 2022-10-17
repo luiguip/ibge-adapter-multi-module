@@ -11,7 +11,7 @@ import java.util.List;
 
 @Component
 @RequiredArgsConstructor
-public class IbgeUfsAdapter implements IbgeUfsPersistencePort {
+public class IbgeUfsPersistenceAdapter implements IbgeUfsPersistencePort {
 
     private final IbgeUfMapper mapper;
     private final IbgeUfsClient client;
