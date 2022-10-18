@@ -24,6 +24,7 @@
     <project.groupId>com.github.luiguip</project.groupId>
     <wiremock.version>2.26.3</wiremock.version>
     <org.mapstruct.version>1.5.2.Final</org.mapstruct.version>
+    <org.springdoc.version>1.6.12</org.springdoc.version>
   </properties>
 
   <parent>

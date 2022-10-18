@@ -27,7 +27,10 @@ It's separated in modules, where each module has a specific job:
   - Spring actuator
   - Spring Webflux
   - Spring Test
+  - Springdoc
 - Lombok
 - Junit
 - Mockito
 - Wiremock
+- Open api
+  - Swagger
