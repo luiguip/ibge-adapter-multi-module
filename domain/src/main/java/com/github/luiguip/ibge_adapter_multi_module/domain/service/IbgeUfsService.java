@@ -3,21 +3,19 @@ package com.github.luiguip.ibge_adapter_multi_module.domain.service;
 import com.github.luiguip.ibge_adapter_multi_module.domain.model.IbgeUf;
 import com.github.luiguip.ibge_adapter_multi_module.domain.port.application.IbgeUfsServicePort;
 import com.github.luiguip.ibge_adapter_multi_module.domain.port.infrastructure.IbgeUfsPersistencePort;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
 public class IbgeUfsService implements IbgeUfsServicePort {
 
-    private final IbgeUfsPersistencePort infra;
+    private final IbgeUfsPersistencePort persistencePort;
 
-    public IbgeUfsService(IbgeUfsPersistencePort infra) {
-        this.infra = infra;
+    public IbgeUfsService(IbgeUfsPersistencePort persistencePort) {
+        this.persistencePort = persistencePort;
     }
 
     @Override
     public List<IbgeUf> findAll() {
-        return infra.findAll();
+        return persistencePort.findAll();
     }
 }
