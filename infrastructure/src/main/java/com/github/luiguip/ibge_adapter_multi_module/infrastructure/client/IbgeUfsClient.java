@@ -23,7 +23,7 @@ public class IbgeUfsClient {
 
     private final WebClient webClient;
 
-    public List<IbgeUfResponse> findAll() throws PersistenceServerException {
+    public List<IbgeUfResponse> findAll() {
         var uri = String.format("%s%s", IbgeEndpoints.UFS_ENDPOINT, "?orderBy=nome");
         log.info("Retrieving all Ufs from Ibge. uri: {}", uri);
         var response = webClient
