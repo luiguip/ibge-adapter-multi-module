@@ -1,5 +1,7 @@
 package com.github.luiguip.ibge_adapter_multi_module.infrastructure.client;
 
+import com.github.luiguip.ibge_adapter_multi_module.domain.exception.PersistenceClientException;
+import com.github.luiguip.ibge_adapter_multi_module.domain.exception.PersistenceServerException;
 import com.github.luiguip.ibge_adapter_multi_module.infrastructure.configuration.WebClientConfiguration;
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
@@ -15,6 +17,7 @@ import java.util.Objects;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.springframework.http.HttpStatus.*;
 
 @ContextConfiguration(classes = WebClientConfiguration.class)
@@ -71,12 +74,9 @@ class IbgeUfsClientTest {
                 .willReturn(aResponse()
                         .withStatus(SERVICE_UNAVAILABLE.value())));
 
-        //when
-        var actual = ibgeUfsClient.findAll();
-
-        //then
-        assertThat(actual)
-                .isEmpty();
+        //when, then
+        assertThatThrownBy(() -> ibgeUfsClient.findAll())
+                .isInstanceOf(PersistenceServerException.class);
     }
 
 
@@ -87,11 +87,8 @@ class IbgeUfsClientTest {
                 .willReturn(aResponse()
                         .withStatus(NOT_FOUND.value())));
 
-        //when
-        var actual = ibgeUfsClient.findAll();
-
-        //then
-        assertThat(actual)
-                .isEmpty();
+        //when, then
+        assertThatThrownBy(() -> ibgeUfsClient.findAll())
+                .isInstanceOf(PersistenceClientException.class);
     }
 }
