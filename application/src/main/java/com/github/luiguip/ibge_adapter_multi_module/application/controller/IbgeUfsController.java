@@ -1,8 +1,7 @@
 package com.github.luiguip.ibge_adapter_multi_module.application.controller;
 
+import com.github.luiguip.ibge_adapter_multi_module.application.adapter.IbgeUfsApplicationAdapter;
 import com.github.luiguip.ibge_adapter_multi_module.application.dto.IbgeUfDto;
-import com.github.luiguip.ibge_adapter_multi_module.application.mapper.IbgeUfDtoMapper;
-import com.github.luiguip.ibge_adapter_multi_module.domain.port.application.IbgeUfsServicePort;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,13 +18,10 @@ import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
         produces = APPLICATION_JSON_VALUE)
 public class IbgeUfsController {
 
-    private final IbgeUfsServicePort service;
-
-    private final IbgeUfDtoMapper mapper;
+    private final IbgeUfsApplicationAdapter adapter;
 
     @GetMapping
     List<IbgeUfDto> findAll() {
-        var ufs = service.findAll();
-        return mapper.toDto(ufs);
+        return adapter.findAll();
     }
 }

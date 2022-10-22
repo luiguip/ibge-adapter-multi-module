@@ -1,96 +1,114 @@
 package com.github.luiguip.ibge_adapter_multi_module.application.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.luiguip.ibge_adapter_multi_module.application.adapter.IbgeUfsApplicationAdapter;
 import com.github.luiguip.ibge_adapter_multi_module.application.dto.IbgeUfDto;
-import com.github.luiguip.ibge_adapter_multi_module.application.mapper.IbgeUfDtoMapper;
-import com.github.luiguip.ibge_adapter_multi_module.domain.exception.PersistenceClientException;
-import com.github.luiguip.ibge_adapter_multi_module.domain.exception.PersistenceServerException;
-import com.github.luiguip.ibge_adapter_multi_module.domain.model.IbgeUf;
-import com.github.luiguip.ibge_adapter_multi_module.domain.port.application.IbgeUfsServicePort;
+import com.github.luiguip.ibge_adapter_multi_module.application.exception.BadGatewayException;
+import com.github.luiguip.ibge_adapter_multi_module.application.exception.InternalServerErrorException;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mapstruct.factory.Mappers;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Spy;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Collections;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@ExtendWith(MockitoExtension.class)
+@WebMvcTest(IbgeUfsController.class)
 class IbgeUfsControllerTest {
 
-    @InjectMocks
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Autowired
     private IbgeUfsController controller;
 
-    @Mock
-    private IbgeUfsServicePort service;
+    @MockBean
+    private IbgeUfsApplicationAdapter adapter;
 
-    @Spy
-    private IbgeUfDtoMapper mapper = Mappers.getMapper(IbgeUfDtoMapper.class);
+    private static ObjectMapper objectMapper;
 
-    @Test
-    void shouldReturnEmptyListWhenDoNotHaveValidUfs() {
-        //when
-        doReturn(Collections.emptyList())
-                .when(service)
-                .findAll();
-        var actual = controller.findAll();
-
-        //then
-        assertThat(actual).isEmpty();
+    @BeforeAll
+    private static void setupAll() {
+        objectMapper = new ObjectMapper();
     }
 
-
     @Test
-    void shouldReturnListWhenItsReceived() {
+    void shouldReturnEmptyListWhenDoNotHaveValidUfs() throws Exception {
         //given
-        var expected = fixtureIbgeUfDtos();
-        var ufs = fixtureIbgeUfs();
+        var ufs = Collections.emptyList();
+        var expected = "[]";
 
-        //when
+        //when, then
         doReturn(ufs)
-                .when(service)
+                .when(adapter)
                 .findAll();
-        var actual = controller.findAll();
 
-        //then
-        assertThat(expected)
-                .isEqualTo(actual);
+        mockMvc.perform(get(ApiEndpoints.UFS_ENDPOINT))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(content().json("[]"));
+
+        verify(adapter).findAll();
+    }
+
+
+    @Test
+    void shouldReturnListWhenItsReceived() throws Exception {
+        //given
+        var ufs = fixtureIbgeUfDtos();
+        var expected = objectMapper.writeValueAsString(ufs);
+
+        //when, then
+        doReturn(fixtureIbgeUfDtos())
+                .when(adapter)
+                .findAll();
+
+        mockMvc.perform(get(ApiEndpoints.UFS_ENDPOINT))
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON))
+                .andExpect(content().json(expected));
+
+        verify(adapter).findAll();
     }
 
     @Test
-    void shouldThrowPersistenceClientExceptionWhenItsThrownByClient() {
-        //given, when
-        doThrow(PersistenceClientException.class)
-                .when(service)
+    void shouldThrowPersistenceClientExceptionWhenItsThrownByClient() throws Exception {
+        //givem
+        var exceptionClazz = InternalServerErrorException.class;
+
+        //when, then
+        doThrow(exceptionClazz)
+                .when(adapter)
                 .findAll();
 
-        //then
-        assertThatThrownBy(() -> controller.findAll())
-                .isInstanceOf(PersistenceClientException.class);
+        mockMvc.perform(get(ApiEndpoints.UFS_ENDPOINT))
+                .andExpect(status().isInternalServerError());
+
+        verify(adapter).findAll();
     }
 
     @Test
-    void shouldThrowPersistenceServerExceptionWhenItsThrownByClient() {
-        //given, when
-        doThrow(PersistenceServerException.class)
-                .when(service)
+    void shouldThrowPersistenceServerExceptionWhenItsThrownByClient() throws Exception {
+        //given
+        var exceptionClazz = BadGatewayException.class;
+
+        //when, then
+        doThrow(exceptionClazz)
+                .when(adapter)
                 .findAll();
 
-        //then
-        assertThatThrownBy(() -> controller.findAll())
-                .isInstanceOf(PersistenceServerException.class);
-    }
+        mockMvc.perform(get(ApiEndpoints.UFS_ENDPOINT))
+                .andExpect(status().isBadGateway());
 
-    private List<IbgeUf> fixtureIbgeUfs() {
-        return List.of(
-                new IbgeUf(1, "São Paulo", "SP"),
-                new IbgeUf(2, "Rio de Janeiro", "RJ"));
+        verify(adapter).findAll();
     }
 
     private List<IbgeUfDto> fixtureIbgeUfDtos() {
