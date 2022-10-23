@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  message-server:
+    container_name: ibge-adapter
+    restart: always
+    build:
+      context: ./ibge-adapter-launcher
+      dockerfile: Dockerfile
+    image: ibge-adapter:latest
+    ports:
+      - "8080:8080"
