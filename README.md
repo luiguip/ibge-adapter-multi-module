@@ -34,3 +34,4 @@ It's separated in modules, where each module has a specific job:
 - Wiremock
 - Open api
   - Swagger
+- Docker
