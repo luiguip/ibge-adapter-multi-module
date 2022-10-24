@@ -1,2 +1,12 @@
 ibge:
   url: https://servicodados.ibge.gov.br/api
+logging:
+  file:
+    path: logs
+  level:
+    org:
+      springframework:
+        cache: TRACE
+spring:
+  redis:
+    host: "${REDIS_HOST:localhost}"

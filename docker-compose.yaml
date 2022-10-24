@@ -1,11 +1,19 @@
 version: '3.9'
 services:
-  message-server:
+  ibge-adapter:
     container_name: ibge-adapter
+    depends_on:
+      - redis-cache
     restart: always
     build:
       context: ./ibge-adapter-launcher
-      dockerfile: Dockerfile
     image: ibge-adapter:latest
+    environment:
+      REDIS_HOST: redis-cache
     ports:
       - "8080:8080"
+  redis-cache:
+    container_name: redis-cache
+    image: redis:latest
+    ports:
+      - "6379:6379"
