@@ -9,7 +9,7 @@ services:
       context: ./ibge-adapter-launcher
     image: ibge-adapter:latest
     environment:
-      REDIS_HOST: redis-cache
+      REDIS_HOST: "redis-cache"
     ports:
       - "8080:8080"
   redis-cache:

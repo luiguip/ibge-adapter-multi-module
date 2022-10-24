@@ -8,6 +8,7 @@ import com.github.luiguip.ibge_adapter_multi_module.domain.exception.Persistence
 import com.github.luiguip.ibge_adapter_multi_module.domain.exception.PersistenceServerException;
 import com.github.luiguip.ibge_adapter_multi_module.domain.port.application.IbgeUfsServicePort;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class IbgeUfsApplicationAdapter {
 
     private final IbgeUfDtoMapper mapper;
 
+    @Cacheable(value="ibgeUfs")
     public List<IbgeUfDto> findAll() {
         try {
             var ufs = service.findAll();
