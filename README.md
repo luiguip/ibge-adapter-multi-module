@@ -28,6 +28,8 @@ It's separated in modules, where each module has a specific job:
   - Spring Webflux
   - Spring Test
   - Springdoc
+  - Spring cache
+  - Spring data redis
 - Lombok
 - Junit
 - Mockito
@@ -35,3 +37,5 @@ It's separated in modules, where each module has a specific job:
 - Open api
   - Swagger
 - Docker
+  - Docker compose
+- Redis
