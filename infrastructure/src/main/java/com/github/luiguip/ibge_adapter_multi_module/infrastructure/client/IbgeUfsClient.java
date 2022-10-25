@@ -25,7 +25,7 @@ public class IbgeUfsClient {
 
     public List<IbgeUfResponse> findAll() {
         var uri = String.format("%s%s", IbgeEndpoints.UFS_ENDPOINT, "?orderBy=nome");
-        log.info("Retrieving all Ufs from Ibge. uri: {}", uri);
+        log.info("Retrieving all Ufs from Ibge | uri: {}", uri);
         var response = webClient
                 .get()
                 .uri(uri)
@@ -38,7 +38,7 @@ public class IbgeUfsClient {
                 .toStream()
                 .toList();
         Objects.requireNonNull(response);
-        log.info("Retrieved from ibge all {} ufs!", response.size());
+        log.info("Retrieved ibge ufs | uri: {} | ufs size: {}", uri, response.size());
         return response;
     }
 }
