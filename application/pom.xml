@@ -10,15 +10,23 @@
     </parent>
 
     <artifactId>application</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${ibge-adapter.version}</version>
     <name>application</name>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>${ibge-adapter.groupId}</groupId>
             <artifactId>domain</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${ibge-adapter.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${ibge-adapter.groupId}</groupId>
+            <artifactId>domain</artifactId>
+            <version>${ibge-adapter.version}</version>
+            <classifier>tests</classifier>
+            <type>test-jar</type>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

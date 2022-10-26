@@ -21,7 +21,9 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
-    <project.groupId>com.github.luiguip</project.groupId>
+    <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
+    <ibge-adapter.groupId>com.github.luiguip</ibge-adapter.groupId>
+    <ibge-adapter.version>0.0.1-SNAPSHOT</ibge-adapter.version>
     <wiremock.version>2.26.3</wiremock.version>
     <org.mapstruct.version>1.5.2.Final</org.mapstruct.version>
     <org.springdoc.version>1.6.12</org.springdoc.version>

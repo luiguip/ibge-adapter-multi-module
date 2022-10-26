@@ -2,7 +2,7 @@ package com.github.luiguip.ibge_adapter_multi_module.infrastructure.adapter;
 
 import com.github.luiguip.ibge_adapter_multi_module.domain.exception.PersistenceClientException;
 import com.github.luiguip.ibge_adapter_multi_module.domain.exception.PersistenceServerException;
-import com.github.luiguip.ibge_adapter_multi_module.domain.model.IbgeUf;
+import com.github.luiguip.ibge_adapter_multi_module.domain.model.IbgeUfFixture;
 import com.github.luiguip.ibge_adapter_multi_module.infrastructure.client.IbgeUfsClient;
 import com.github.luiguip.ibge_adapter_multi_module.infrastructure.client.response.IbgeUfResponse;
 import com.github.luiguip.ibge_adapter_multi_module.infrastructure.mapper.IbgeUfMapper;
@@ -54,7 +54,7 @@ class IbgeUfsPersistenceAdapterTest {
     void shouldReturnListWhenItsReceived() {
         //given
         var response = fixtureIbgeUfsResponse();
-        var expected = fixtureIbgeUfs();
+        var expected = IbgeUfFixture.fixtureIbgeUfs();
 
         //when
         doReturn(response)
@@ -89,12 +89,6 @@ class IbgeUfsPersistenceAdapterTest {
         //then
         assertThatThrownBy(() -> adapter.findAll())
                 .isInstanceOf(PersistenceServerException.class);
-    }
-
-    private List<IbgeUf> fixtureIbgeUfs() {
-        return List.of(
-                new IbgeUf(1, "São Paulo", "SP"),
-                new IbgeUf(2, "Rio de Janeiro", "RJ"));
     }
 
     private List<IbgeUfResponse> fixtureIbgeUfsResponse() {

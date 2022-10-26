@@ -6,6 +6,7 @@ import com.github.luiguip.ibge_adapter_multi_module.application.exception.Intern
 import com.github.luiguip.ibge_adapter_multi_module.application.mapper.IbgeUfDtoMapper;
 import com.github.luiguip.ibge_adapter_multi_module.domain.exception.PersistenceClientException;
 import com.github.luiguip.ibge_adapter_multi_module.domain.exception.PersistenceServerException;
+import com.github.luiguip.ibge_adapter_multi_module.domain.model.IbgeUfFixture;
 import com.github.luiguip.ibge_adapter_multi_module.domain.port.application.IbgeUfsServicePort;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

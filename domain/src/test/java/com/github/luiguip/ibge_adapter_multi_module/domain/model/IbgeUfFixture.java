@@ -1,10 +1,7 @@
-package com.github.luiguip.ibge_adapter_multi_module.application.adapter;
-
-import com.github.luiguip.ibge_adapter_multi_module.domain.model.IbgeUf;
+package com.github.luiguip.ibge_adapter_multi_module.domain.model;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 public class IbgeUfFixture {
 
     private IbgeUfFixture() {
