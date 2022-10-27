@@ -6,7 +6,7 @@ services:
       - redis-cache
     restart: always
     build:
-      context: ./ibge-adapter-launcher
+      context: .
     image: ibge-adapter:latest
     environment:
       REDIS_HOST: "redis-cache"
