@@ -6,29 +6,29 @@
     <parent>
         <artifactId>ibge-adapter</artifactId>
         <groupId>com.github.luiguip</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1</version>
     </parent>
 
     <artifactId>ibge-adapter-launcher</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>ibge-adapter-launcher</name>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>${ibge-adapter.groupId}</groupId>
             <artifactId>application</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${ibge-adapter.version}</version>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>${ibge-adapter.groupId}</groupId>
             <artifactId>domain</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${ibge-adapter.version}</version>
         </dependency>
         <dependency>
-            <groupId>${project.groupId}</groupId>
+            <groupId>${ibge-adapter.groupId}</groupId>
             <artifactId>infrastructure</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${ibge-adapter.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

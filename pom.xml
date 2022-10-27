@@ -7,7 +7,7 @@
   <groupId>com.github.luiguip</groupId>
   <artifactId>ibge-adapter</artifactId>
   <packaging>pom</packaging>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <name>ibge-adapter</name>
 
   <modules>
@@ -23,7 +23,7 @@
     <maven.compiler.target>17</maven.compiler.target>
     <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
     <ibge-adapter.groupId>com.github.luiguip</ibge-adapter.groupId>
-    <ibge-adapter.version>0.0.1-SNAPSHOT</ibge-adapter.version>
+    <ibge-adapter.version>0.0.1</ibge-adapter.version>
     <wiremock.version>2.26.3</wiremock.version>
     <org.mapstruct.version>1.5.2.Final</org.mapstruct.version>
     <org.springdoc.version>1.6.12</org.springdoc.version>

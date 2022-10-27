@@ -6,11 +6,11 @@
     <parent>
         <artifactId>ibge-adapter</artifactId>
         <groupId>com.github.luiguip</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>0.0.1</version>
     </parent>
 
     <artifactId>application</artifactId>
-    <version>${ibge-adapter.version}</version>
+    <version>0.0.1</version>
     <name>application</name>
     <packaging>jar</packaging>
 
