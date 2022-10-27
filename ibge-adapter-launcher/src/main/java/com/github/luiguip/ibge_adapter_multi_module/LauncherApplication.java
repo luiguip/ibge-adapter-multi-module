@@ -1,4 +1,4 @@
-package com.github.luiguip.ibge_adapter_multi_module.ibge_adapter_launcher;
+package com.github.luiguip.ibge_adapter_multi_module;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @EnableWebMvc
 @EnableCaching
-@SpringBootApplication(scanBasePackages = "com.github.luiguip.ibge_adapter_multi_module")
+@SpringBootApplication
 public class LauncherApplication {
 
     public static void main(String[] args) {

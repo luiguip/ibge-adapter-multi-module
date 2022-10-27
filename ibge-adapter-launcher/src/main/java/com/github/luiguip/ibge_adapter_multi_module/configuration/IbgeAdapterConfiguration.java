@@ -1,4 +1,4 @@
-package com.github.luiguip.ibge_adapter_multi_module.ibge_adapter_launcher.configuration;
+package com.github.luiguip.ibge_adapter_multi_module.configuration;
 
 import com.github.luiguip.ibge_adapter_multi_module.domain.service.IbgeUfsService;
 import com.github.luiguip.ibge_adapter_multi_module.infrastructure.adapter.IbgeUfsPersistenceAdapter;
